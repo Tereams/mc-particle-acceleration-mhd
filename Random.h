@@ -3,14 +3,15 @@
 
 class Random {
 public:
-    Random(unsigned seed = 42) : gen(seed), uni(0.0, 1.0) {}
+    Random(unsigned seed = 42)
+        : gen(seed), uni(0.0, 1.0), norm(0.0, 1.0) {}
 
-    double uniform() {
-        return uni(gen);
-    }
+    double uniform() { return uni(gen); }
+    double normal01() { return norm(gen); }
 
-    double normal() {
-        return norm(gen);
+    // Uniform in [a,b]
+    double uniform(double a, double b) {
+        return a + (b - a) * uniform();
     }
 
 private:

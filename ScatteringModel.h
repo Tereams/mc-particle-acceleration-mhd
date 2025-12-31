@@ -1,17 +1,14 @@
 #pragma once
+#include "Particle.h"
+#include "Random.h"
 
-struct Particle {
-    // position
-    double x, y, z;
+struct ScatterResult {
+    double dW = 0.0;     // energy gain [erg]
+    double dtScat = 0.0; // extra time [s] (MATLAB: dtScat)
+};
 
-    // kinematics
-    double v;     // speed [cm/s]
-    double W;     // kinetic energy [erg]
-    double t;     // time [s]
-
-    // statistics
-    int kkicks = 0;
-    double sum_dW = 0.0;
-
-    bool escaped = false;
+class ScatteringModel {
+public:
+    virtual ~ScatteringModel() = default;
+    virtual ScatterResult scatter(const Particle& p, Random& rng) = 0;
 };
