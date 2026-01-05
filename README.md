@@ -63,15 +63,12 @@ This shows how many particles end up at low vs high energy.
 
 ![Energy spectrum](img/energy_spectrum.png)
 
----
 
 ### 2. Energy vs number of kicks
 
 This shows that **more kicks do not always mean higher energy** — large jumps matter more than many small ones.
 
 ![Energy vs kicks](img/energy_vs_kicks.png)
-
----
 
 ### 3. Escape time distribution
 
